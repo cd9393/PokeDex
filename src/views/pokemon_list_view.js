@@ -17,7 +17,13 @@ PokemonListView.prototype.createPokedex = function (pokemonArray) {
   pokedex.classList.add('pokedex');
   pokemonArray.forEach((pokemon) => {
     const listItem = document.createElement('li');
+    listItem.id = pokemon.name;
+    listItem.value = pokemon.name;
     listItem.textContent = pokemon.name;
+    listItem.addEventListener("click",(event) => {
+      const selectedPokemon = event.target.id;
+      PubSub.publish("pokemonListView: Pokemon-selected",selectedPokemon)
+    })
     pokedex.appendChild(listItem)
   })
   return pokedex;

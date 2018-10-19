@@ -6,8 +6,22 @@ this.data = null;
 };
 
 Pokemon.prototype.bindEvents = function () {
+PubSub.subscribe("pokemonListView: Pokemon-selected", (event) => {
+  const selectedPokemon = event.detail;
+  const pokemonDetail = this.getIndividualData(selectedPokemon);
 
+})
 };
+
+Pokemon.prototype.getIndividualData = function (individualPokemon) {
+  const url= `https://pokeapi.co/api/v2/pokemon/${individualPokemon}/`;
+  const request = new Request(url);
+
+  request.get().then(data => {
+    console.log(data);
+  PubSub.publish('Pokemon:individualPokemon', data);
+  })
+}
 
 Pokemon.prototype.getData = function () {
   const url = "https://pokeapi.co/api/v2/pokemon/";

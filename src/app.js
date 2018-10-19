@@ -9,5 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   pokemonListView.bindEvents();
 
   const pokemon = new Pokemon();
+  pokemon.bindEvents();
   pokemon.getData();
 });
