@@ -8,7 +8,7 @@ this.data = null;
 Pokemon.prototype.bindEvents = function () {
 PubSub.subscribe("pokemonListView: Pokemon-selected", (event) => {
   const selectedPokemon = event.detail;
-  const pokemonDetail = this.getIndividualData(selectedPokemon);
+ this.getIndividualData(selectedPokemon);
 
 })
 };
