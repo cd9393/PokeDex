@@ -18,6 +18,14 @@ Pokemon.prototype.bindEvents = function () {
     this.getTypesPokemon(types)
 
   })
+
+  PubSub.subscribe('PokemonListView:search-input',(event) => {
+    const searchTerms = event.detail;
+    const searchResults = this.data.filter((pokemon) => {
+      return pokemon.name.includes(searchTerms)
+    })
+    PubSub.publish("Pokemon:searchResults",searchResults)
+  })
 };
 
 Pokemon.prototype.getTypesPokemon = function (types) {

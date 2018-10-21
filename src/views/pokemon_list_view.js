@@ -6,6 +6,11 @@ const PokemonListView = function(container,element){
 };
 
 PokemonListView.prototype.bindEvents = function () {
+
+  const searchBar = document.querySelector('#search');
+  searchBar.addEventListener('input',(event) => {
+    PubSub.publish('PokemonListView:search-input',event.target.value)
+  })
   PubSub.subscribe('Pokemon:pokemon-data-loaded',(event) => {
     const pokemon = event.detail
     const pokedex = this.createPokedex(pokemon);
@@ -26,8 +31,12 @@ PokemonListView.prototype.bindEvents = function () {
 
     const filter = this.createFilteredList(pokemon)
     this.container.appendChild(filter)
-
-
+  })
+  PubSub.subscribe("Pokemon:searchResults",(event) => {
+    const pokemon = event.detail;
+    this.container.innerHTML = ''
+    const searchResults = this.createPokedex(pokemon);
+    this.container.appendChild(searchResults)
   })
 };
 
