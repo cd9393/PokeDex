@@ -1,3 +1,8 @@
+body{
+  font-family: 'Lato', sans-serif;
+  background-color: #fd331b;
+}
+
 .container{
   width:100%;
   display: flex;
@@ -9,11 +14,11 @@
 }
 
 .pokemon-container{
-  width: 1000px;
+  width: 60%;
   display: flex;
   flex-flow: column;
   justify-content:space-between;
-  background-color: white;
+  background-color: #ffffff;
 
 }
 
@@ -23,32 +28,23 @@
 
 h1{
   font-size: 40pt;
-}
-
-.navbar{
-  display: flex;
-  flex-direction: row;
-  position: sticky;
-  top: 0;
-  list-style-type: none;
-  border: solid 1px black;
+  color: #fdcb06;
+  text-shadow:2px 4px #385db3;
 
 }
 
-.navbar li{
-  padding: 30px;
-  border: solid 1px black;
-}
 
 .pokedex{
   width: 100%;
   font-size: 24pt;
+  list-style-type: none;
 }
 
 .pokedex li{
-  width: 100%;
+  width: 75%;
   padding: 10px;
   margin:10px;
+  border-radius: 25px;
   border: solid 1px black;
 }
 .image{
@@ -85,7 +81,7 @@ flex-flow: column;
     font-size: 30pt;
     text-align: center;
     font-weight: bold;
-    background-color: grey;
+    background-color: #6ac71f;
 }
 
 .species{
@@ -96,4 +92,20 @@ flex-flow: column;
 .description{
   padding: 20px;
   font-size: 20pt;
+}
+
+.filter{
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  font-size: 20pt;
+  margin: 20px;
+  padding: 10px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.stat-row{
+  border: solid 1px black;
+  margin: 5px;
 }

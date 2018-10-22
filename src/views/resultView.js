@@ -67,7 +67,8 @@ ResultView.prototype.pokemonStats = function (pokemon) {
   const statsBox = document.createElement('div')
   statsBox.classList.add('stats');
   stats.forEach((status) => {
-    const statsRow = document.createElement('div');
+    const statsRow = document.createElement('div')
+    statsRow.classList.add('stat-row');
     const span = document.createElement('span');
     span.textContent = status.stat.name;
     statsRow.appendChild(span);
