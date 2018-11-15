@@ -4,17 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "build": "webpack -w",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "webpack -p"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cli": "^1.0.1",
-    "webpack": "^4.21.0"
+    "cli": "1.0.1",
+    "express": "4.16.4",
+    "webpack": "4.21.0"
   },
   "devDependencies": {
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "3.1.2"
   }
 }
