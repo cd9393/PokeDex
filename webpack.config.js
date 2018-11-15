@@ -1,8 +1,10 @@
+// webpack.config.js
+
 const config = {
-  entry: `${ __dirname }/src/app.js`,
+  entry: `${__dirname}/src/app.js`,
   output: {
-    filename: 'bundle.js',
-    path: `${ __dirname }/public/js`
+    path: `${__dirname}/public/js`,
+    filename: 'bundle.js'
   },
   mode: 'development'
 };
